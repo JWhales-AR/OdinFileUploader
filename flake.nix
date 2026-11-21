@@ -29,6 +29,7 @@
       default = pkgs.mkShell {
         buildInputs = with pkgs; [
           prisma-engines
+          openssl
         ];
         packages = [
           connectSql

@@ -3,7 +3,10 @@ import express from "express";
 import path from "node:path";
 import livereload from "livereload";
 import connectLiveReload from "connect-livereload";
+import session from "express-session";
+import passport from "passport";
 
+import sessionConfig from "./expressSessionConfig.ts";
 import indexRouter from "./routes/indexRouter.ts";
 
 const liveReloadServer = livereload.createServer();
@@ -25,6 +28,8 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 app.use(express.static(assetsPath));
 
+app.use(session(sessionConfig));
+app.use(passport.session());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
