@@ -8,6 +8,7 @@ import passport from "passport";
 
 import sessionConfig from "./expressSessionConfig.ts";
 import indexRouter from "./routes/indexRouter.ts";
+import userRouter from "./routes/userRouter.ts";
 
 const liveReloadServer = livereload.createServer();
 liveReloadServer.server.once("connection", () => {
@@ -34,6 +35,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/", indexRouter);
+app.use("/user", userRouter);
 
 app.listen(PORT, (error) => {
   if (error) {

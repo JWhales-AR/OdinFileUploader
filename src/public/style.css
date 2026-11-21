@@ -1,0 +1,7 @@
+label:has(+ input[required]) {
+    &::after {
+        content: "*";
+        color: red;
+        margin-left: 0.2rem;
+    }
+}
