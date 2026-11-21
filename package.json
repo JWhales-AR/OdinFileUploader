@@ -1,0 +1,66 @@
+{
+  "name": "file_uploader",
+  "version": "1.0.0",
+  "description": "Basic Personal Storage Service as Part of the Odin Project",
+  "keywords": [
+    "Odin",
+    "Multer",
+    "Cloudinary",
+    "Express",
+    "EJS",
+    "Node"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "url"
+  },
+  "license": "MIT",
+  "author": "Alex Rosegrid",
+  "type": "module",
+  "main": "app.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/app.ts --ext html,ejs,js,ts,css"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/connect-livereload": "^0.6.3",
+    "@types/ejs": "^3.1.5",
+    "@types/express": "^5.0.6",
+    "@types/express-session": "^1.19.0",
+    "@types/express-validator": "^2.20.33",
+    "@types/livereload": "^0.9.5",
+    "@types/multer": "^2.3.0",
+    "@types/node": "^26.6.6",
+    "@types/passport": "^1.0.17",
+    "@types/passport-local": "^1.0.38",
+    "@types/pg": "^8.23.1",
+    "connect-livereload": "^0.6.1",
+    "eslint": "^10.14.0",
+    "livereload": "^0.10.3",
+    "nodemon": "^3.1.14",
+    "prettier": "^3.9.10",
+    "prisma": "^8.0.0-rc.34",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.72.1"
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "^7.10.1",
+    "@prisma/client": "^7.10.1",
+    "@quixo3/prisma-session-store": "^3.1.21",
+    "bcrypt": "^6.0.0",
+    "cloudinary": "^2.11.0",
+    "dotenv": "^18.0.9",
+    "ejs": "^7.0.2",
+    "express": "^5.3.0",
+    "express-session": "^1.19.0",
+    "express-validator": "^7.3.2",
+    "globals": "^17.14.0",
+    "multer": "^2.5.0",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "pg": "^8.23.1"
+  }
+}
