@@ -5,10 +5,12 @@ import livereload from "livereload";
 import connectLiveReload from "connect-livereload";
 import session from "express-session";
 import passport from "passport";
+import { Strategy as LocalStrategy } from "passport-local";
 
 import sessionConfig from "./expressSessionConfig.ts";
 import indexRouter from "./routes/indexRouter.ts";
 import userRouter from "./routes/userRouter.ts";
+import { localStrategyOptions, getUserById } from "./passportConfig.ts";
 
 const liveReloadServer = livereload.createServer();
 liveReloadServer.server.once("connection", () => {
@@ -31,6 +33,18 @@ app.use(express.static(assetsPath));
 
 app.use(session(sessionConfig));
 app.use(passport.session());
+passport.use(new LocalStrategy(localStrategyOptions));
+passport.serializeUser((user, done) => {
+  done(null, user.id);
+});
+passport.deserializeUser(async (id: number, done) => {
+  try {
+    done(null, getUserById(id));
+  } catch (err) {
+    done(err);
+  }
+});
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
